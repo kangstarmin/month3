@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬라이드 메뉴 연습</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    #menuBtn{
+      border: none;
+      background-color: black;
+      color: white;
+      margin: 0;
+      width: 80px;
+      height: 40px;
+      font-size: 16px;
+    }
+    h1{
+      padding-left: 10px;
+      font-weight: 100;
+    }
+    
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <button id="menuBtn">Menu</button>
+    <div class="bar">
+      <h1>홈</h1>
+      <h1>회사 안내</h1>
+      <h1>업무 내용</h1>
+      <h1>고객 지원</h1>
+      <h1>문의</h1>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      const h1 = $("h1")
+      const menuBtn = $("#menuBtn")
+      const bar = $(".bar")
+
+      bar.hide()
+      menuBtn.on({
+        mouseenter: function(){
+          bar.slideDown(400)
+        },
+        mouseleave: function(){
+          bar.slideUp(400)
+        }
+      })
+    })
+  </script>
+</body>
+</html>
